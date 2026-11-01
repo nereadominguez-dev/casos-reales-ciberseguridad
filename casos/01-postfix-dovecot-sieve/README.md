@@ -23,10 +23,22 @@ Dado que la auditoría web resultó totalmente limpia pero la cola de correo con
 
 ---
 
-![Detección de regla Sieve en registros](sieve-detection-log.jpg)
 
 ### Fase 2: Aislamiento y Detección de la Persistencia
 1. **Análisis de Logs del Correo:** Inspección detallada de los registros del sistema (`/var/log/maillog`) filtrando por los agentes de entrega local (LDA/Dovecot):
    ```bash
    grep -i "dominio_afectado" /var/log/maillog | tail -n 25
+
+![Detección de regla Sieve en registros](sieve-detection-log.jpg)
+
+### **Fase 3: Erradicación y Limpieza de Archivos Ocultos Sieve**
+
+Para eliminar por completo el reenvío malicioso y asegurar que el agente de entrega local (LDA) de Dovecot no ejecutara reglas en caché, se realizó un proceso de purga en dos etapas dentro del directorio del buzón afectado (`/var/qmail/mailnames/dominio_anonimizado/cuenta_anonimizada/`):
+
+#### **1. Purga de Reglas de Usuario y Directorio Sieve (`rm -rf .sieve* sieve/`)**
+* **Objetivo:** Eliminar scripts activos de usuario (`.sieve`) y la carpeta contenedora (`sieve/`) donde Webmail/Roundcube guarda las configuraciones del filtro.
+* **Comando ejecutado:**
+  ```bash
+  rm -rf .sieve* sieve/
+  
 ![Verificación de limpieza en terminal](terminal-cleanup.jpg)
