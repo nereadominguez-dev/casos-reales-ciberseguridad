@@ -29,4 +29,4 @@ casos/01-postfix-dovecot-sieve/sieve-detection-log.jpg
 1. **Análisis de Logs del Correo:** Inspección detallada de los registros del sistema (`/var/log/maillog`) filtrando por los agentes de entrega local (LDA/Dovecot):
    ```bash
    grep -i "dominio_afectado" /var/log/maillog | tail -n 25
-![Limpieza de archivos Sieve en consola](/assets/terminal-cleanup.jpg)
+casos/01-postfix-dovecot-sieve/terminal-cleanup.jpg
