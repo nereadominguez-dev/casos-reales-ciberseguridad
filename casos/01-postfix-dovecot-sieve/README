@@ -1,4 +1,4 @@
-# Caso de Estudio: Respuesta a Incidentes y Erradicación de Persistencia en Servidor de Correo (Postfix/Dovecot)
+# ** Caso de Estudio: Respuesta a Incidentes y Erradicación de Persistencia en Servidor de Correo (Postfix/Dovecot)**
 
 ##  Resumen del Incidente
 Se recibió una alerta crítica del proveedor de infraestructura debido a un volumen inusualmente alto de tráfico SMTP saliente por el puerto 25/tcp. Esto provocó el bloqueo preventivo del puerto y la inclusión de la dirección IP del servidor en varias listas negras públicas de reputación (RBL: Spamhaus, TRUNCATE, NoSolicitado).
