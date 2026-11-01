@@ -23,10 +23,10 @@ Dado que la auditoría web resultó totalmente limpia pero la cola de correo con
 
 ---
 
-/casos/01-postfix-dovecot-sieve/sieve-detection-log.jpg
+![Detección de regla Sieve en registros](sieve-detection-log.jpg)
 
 ### Fase 2: Aislamiento y Detección de la Persistencia
 1. **Análisis de Logs del Correo:** Inspección detallada de los registros del sistema (`/var/log/maillog`) filtrando por los agentes de entrega local (LDA/Dovecot):
    ```bash
    grep -i "dominio_afectado" /var/log/maillog | tail -n 25
-/casos/01-postfix-dovecot-sieve/terminal-cleanup.jpg
+![Verificación de limpieza en terminal](terminal-cleanup.jpg)
